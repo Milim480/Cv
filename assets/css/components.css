@@ -1,0 +1,625 @@
+/* Теги технологий: компактные, в одну строку, при нехватке места переносятся */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+
+/* ===== МОДАЛЬНОЕ ОКНО ПРОЕКТА ===== */
+
+dialog.project-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+
+  width: min(760px, calc(100% - 32px));
+  max-width: 760px;
+  max-height: 85vh;
+
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  background: var(--modal-bg);
+  color: var(--modal-text);
+
+  box-shadow: var(--modal-shadow);
+  overscroll-behavior: contain;
+  scrollbar-color: var(--muted) var(--modal-bg);
+}
+
+dialog.project-modal::backdrop {
+  background: var(--modal-backdrop);
+  backdrop-filter: blur(4px);
+}
+
+/* Внутренняя область */
+
+dialog.project-modal .project-modal__panel {
+  position: relative;
+  min-width: 0;
+}
+
+dialog.project-modal .project-modal__content {
+  padding: 32px;
+  color: var(--modal-text);
+  overflow-wrap: anywhere;
+}
+
+/* Кнопка закрытия */
+
+dialog.project-modal .project-modal__close {
+  position: sticky;
+  z-index: 2;
+  top: 12px;
+  float: right;
+
+  margin: 12px 12px 0 0;
+  padding: 8px 12px;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+
+  background: var(--surface);
+  color: var(--text);
+
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+
+dialog.project-modal .project-modal__close:hover {
+  background: var(--bg);
+  border-color: var(--ink);
+}
+
+dialog.project-modal .project-modal__close:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Заголовок и вводный текст */
+
+dialog.project-modal .project-modal__eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+dialog.project-modal .project-modal__title {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+dialog.project-modal .project-modal__subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Обложка проекта */
+
+dialog.project-modal .project-modal__cover {
+  display: block;
+  width: 100%;
+  max-height: 340px;
+  margin: 24px 0;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+
+  background: var(--bg);
+  object-fit: cover;
+}
+
+/* Задача, выполненная работа и результат */
+
+dialog.project-modal .project-modal__facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  margin: 28px 0;
+  padding: 0;
+}
+
+dialog.project-modal .project-modal__fact {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__fact:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__fact dt {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+dialog.project-modal .project-modal__fact dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Разделы проекта */
+
+dialog.project-modal .project-modal__section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__section h3 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+dialog.project-modal .project-modal__section p {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+dialog.project-modal .project-modal__section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Списки */
+
+dialog.project-modal .project-modal__list {
+  display: grid;
+  gap: 9px;
+
+  margin: 12px 0 0;
+  padding-left: 20px;
+
+  color: var(--text);
+  list-style: disc;
+}
+
+dialog.project-modal .project-modal__list li {
+  padding-left: 3px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Ссылки на материалы */
+
+dialog.project-modal .project-modal__list a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+dialog.project-modal .project-modal__list a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Мобильная версия */
+
+@media (max-width: 600px) {
+  dialog.project-modal {
+    width: calc(100% - 20px);
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+
+  dialog.project-modal .project-modal__content {
+    padding: 24px 18px;
+  }
+
+  dialog.project-modal .project-modal__title {
+    font-size: 25px;
+  }
+
+  dialog.project-modal .project-modal__cover {
+    max-height: 220px;
+    margin: 20px 0;
+  }
+
+  dialog.project-modal .project-modal__section {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+/* Уменьшение анимаций по настройкам системы */
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.project-modal .project-modal__close {
+    transition: none;
+  }
+}
+
+/* ===== CASE STUDY: оформление модалки ===== */
+
+dialog.project-modal .project-modal__content {
+  padding: 0;
+}
+
+/* Шапка кейса */
+
+dialog.project-modal .project-modal__hero {
+  padding: 36px 36px 28px;
+  background: var(--modal-bg);
+}
+
+dialog.project-modal .project-modal__eyebrow {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 5px 9px;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+dialog.project-modal .project-modal__title {
+  max-width: 620px;
+  margin: 0 0 14px;
+
+  color: var(--text);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+dialog.project-modal .project-modal__subtitle {
+  max-width: 580px;
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Обложка */
+
+dialog.project-modal .project-modal__cover {
+  width: 100%;
+  max-height: 320px;
+  margin: 28px 0 0;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Факты — три компактных блока */
+
+dialog.project-modal .project-modal__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+
+  margin: 0;
+  padding: 22px 36px;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+dialog.project-modal .project-modal__fact {
+  min-width: 0;
+  padding: 4px 18px;
+  border: 0;
+  border-left: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__fact:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+dialog.project-modal .project-modal__fact:last-child {
+  padding-right: 0;
+  border-bottom: 0;
+}
+
+dialog.project-modal .project-modal__fact dt {
+  margin: 0 0 9px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+
+dialog.project-modal .project-modal__fact dd {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* Секции кейса */
+
+dialog.project-modal .project-modal__section {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 16px;
+
+  margin: 0;
+  padding: 28px 36px;
+
+  border-top: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__section:first-of-type {
+  border-top: 0;
+}
+
+dialog.project-modal .project-modal__section-index {
+  grid-column: 1;
+  grid-row: 1;
+
+  padding-top: 3px;
+
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+dialog.project-modal .project-modal__section-title {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin: 0 0 12px;
+
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+dialog.project-modal .project-modal__section p,
+dialog.project-modal .project-modal__section .project-modal__list {
+  grid-column: 2;
+}
+
+dialog.project-modal .project-modal__section p {
+  margin: 0 0 12px;
+
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+dialog.project-modal .project-modal__section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Личный вклад */
+
+dialog.project-modal .project-modal__section--role {
+  margin: 8px 20px;
+  padding: 24px 20px;
+
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink);
+  border-radius: var(--radius-m);
+
+  background: var(--bg);
+}
+
+dialog.project-modal .project-modal__section--role
+.project-modal__section-index {
+  color: var(--ink);
+}
+
+dialog.project-modal .project-modal__section--role
+.project-modal__section-title {
+  color: var(--ink);
+}
+
+/* Результат */
+
+dialog.project-modal .project-modal__section--result
+.project-modal__section-index {
+  color: var(--ink);
+}
+
+/* Списки и материалы */
+
+dialog.project-modal .project-modal__list {
+  display: grid;
+  gap: 8px;
+
+  margin: 10px 0 0;
+  padding-left: 18px;
+
+  list-style: disc;
+}
+
+dialog.project-modal .project-modal__list li {
+  padding-left: 3px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+dialog.project-modal .project-modal__list a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+dialog.project-modal .project-modal__list a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Адаптация под небольшие экраны */
+
+@media (max-width: 600px) {
+  dialog.project-modal .project-modal__hero {
+    padding: 28px 20px 22px;
+  }
+
+  dialog.project-modal .project-modal__title {
+    font-size: 29px;
+  }
+
+  dialog.project-modal .project-modal__subtitle {
+    font-size: 14px;
+  }
+
+  dialog.project-modal .project-modal__cover {
+    max-height: 220px;
+    margin-top: 20px;
+  }
+
+  dialog.project-modal .project-modal__facts {
+    grid-template-columns: 1fr;
+    padding: 12px 20px;
+  }
+
+  dialog.project-modal .project-modal__fact,
+  dialog.project-modal .project-modal__fact:first-child {
+    padding: 13px 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dialog.project-modal .project-modal__fact:last-child {
+    border-bottom: 0;
+  }
+
+  dialog.project-modal .project-modal__section {
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 10px;
+    padding: 22px 20px;
+  }
+
+  dialog.project-modal .project-modal__section-title {
+    font-size: 17px;
+  }
+
+  dialog.project-modal .project-modal__section--role {
+    margin: 8px 10px;
+    padding: 20px 14px;
+  }
+}
+
+/* Нумерация разделов кейса */
+dialog.project-modal .project-modal__section {
+  grid-template-columns: 36px minmax(0, 1fr);
+  column-gap: 16px;
+}
+
+dialog.project-modal .project-modal__section-index {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+
+  padding-top: 5px;
+  color: var(--muted);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+dialog.project-modal .project-modal__section-title {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0 0 12px;
+
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+dialog.project-modal .project-modal__section p,
+dialog.project-modal .project-modal__section .project-modal__list {
+  grid-column: 2;
+  min-width: 0;
+}
+
+/* Индикатор материалов */
+dialog.project-modal .project-modal__materials-index {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+
+
+@media (max-width: 600px) {
+  dialog.project-modal .project-modal__section {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 12px;
+  }
+
+  dialog.project-modal .project-modal__section-title {
+    font-size: 16px;
+  }
+}

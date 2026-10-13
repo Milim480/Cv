@@ -1,0 +1,68 @@
+:root {
+  /* Цвета */
+  --bg: #f5f5f3;
+  --surface: #ffffff;
+  --ink: #0f2340;
+  --text: #1c2a3d;
+  --muted: #5d6b7e;
+  --line: #d9dcdf;
+  --on-ink: #ffffff;
+
+  /* Модальное окно */
+  --modal-bg: var(--surface);
+  --modal-text: var(--text);
+  --modal-backdrop: rgb(15 25 40 / 60%);
+  --modal-shadow: 0 24px 80px rgb(15 25 40 / 18%);
+
+  /* Шрифты */
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+
+  /* Размеры */
+  --container: 1180px;
+  --gutter: 24px;
+  --radius-s: 4px;
+  --radius-m: 6px;
+}
+
+/* Тёмная тема системы */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151b;
+    --surface: #1a2029;
+    --ink: #e8edf5;
+    --text: #d5dbe5;
+    --muted: #9aa5b5;
+    --line: #2c3541;
+    --on-ink: #11151b;
+
+    --modal-bg: var(--surface);
+    --modal-text: var(--text);
+    --modal-backdrop: rgb(0 0 0 / 72%);
+    --modal-shadow: 0 24px 80px rgb(0 0 0 / 40%);
+  }
+}
+
+/* Явное переключение на светлую тему */
+:root[data-theme="light"] {
+  --modal-bg: var(--surface);
+  --modal-text: var(--text);
+  --modal-backdrop: rgb(15 25 40 / 60%);
+  --modal-shadow: 0 24px 80px rgb(15 25 40 / 18%);
+}
+
+/* Явное переключение на тёмную тему */
+:root[data-theme="dark"] {
+  --bg: #11151b;
+  --surface: #1a2029;
+  --ink: #e8edf5;
+  --text: #d5dbe5;
+  --muted: #9aa5b5;
+  --line: #2c3541;
+  --on-ink: #11151b;
+
+  --modal-bg: var(--surface);
+  --modal-text: var(--text);
+  --modal-backdrop: rgb(0 0 0 / 72%);
+  --modal-shadow: 0 24px 80px rgb(0 0 0 / 40%);
+}
