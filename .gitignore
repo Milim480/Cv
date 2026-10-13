@@ -25,3 +25,10 @@ Thumbs.db
 *.tmp
 *.bak
 *~
+
+# Local reference files
+/files/
+/ref.png
+# Local documents and references
+/files/
+/ref.png
