@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gov-procurement",
+    "title": "Курсы по государственным закупкам",
+    "subtitle": "РТС-Академия",
+    "period": "2026 (2 месяца)",
+    "summary": "120 акад. ч.",
+    "tags": [
+      "44 ФЗ",
+      "223 ФЗ"
+    ],
+    "details": {
+      "materials": [],
+      "thanks": []
+    },
+    "certificate": {
+      "label": "Удостоверение о повышении квалификации",
+      "url": ""
+    }
+  },
+  {
+    "id": "mipt-ml",
+    "title": "Основы машинного и глубокого обучения",
+    "subtitle": "МФТИ",
+    "period": "2026-2027 (9 месяцев)",
+    "summary": "270 акад. ч.",
+    "tags": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    "details": {
+      "materials": [],
+      "thanks": []
+    },
+    "certificate": {
+      "label": "Сертификат",
+      "url": ""
+    }
+  }
+]

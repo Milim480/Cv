@@ -623,3 +623,259 @@ dialog.project-modal .project-modal__materials-index {
     font-size: 16px;
   }
 }
+
+/* ===== ВИТРИНА, ГАЛЕРЕЯ И НАВИГАЦИЯ ВНУТРИ МОДАЛКИ ===== */
+
+/* Число колонок в блоке фактов зависит от того, сколько фактов заполнено */
+@media (min-width: 601px) {
+  dialog.project-modal .project-modal__facts {
+    grid-template-columns: repeat(var(--fact-cols, 3), minmax(0, 1fr));
+  }
+}
+
+/* Кнопка «назад к витрине» */
+dialog.project-modal .project-modal__back {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 18px;
+  padding: 6px 10px;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+
+  transition: border-color 0.15s;
+}
+
+dialog.project-modal .project-modal__back:hover {
+  border-color: var(--ink);
+}
+
+/* Блоки витрины и галереи */
+dialog.project-modal .project-modal__showcase,
+dialog.project-modal .project-modal__gallery {
+  padding: 28px 36px;
+  border-top: 1px solid var(--line);
+}
+
+dialog.project-modal .project-modal__facts + .project-modal__showcase,
+dialog.project-modal .project-modal__facts + .project-modal__gallery {
+  border-top: 0;
+}
+
+dialog.project-modal .project-modal__showcase-title {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+dialog.project-modal .project-modal__showcase-intro {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Сетка карточек витрины */
+dialog.project-modal .showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+dialog.project-modal .showcase__status {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+dialog.project-modal .showcase__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--bg);
+
+  transition: border-color 0.15s;
+}
+
+dialog.project-modal .showcase__card:hover,
+dialog.project-modal .showcase__card:has(.showcase__open:focus-visible) {
+  border-color: var(--ink);
+}
+
+dialog.project-modal .showcase__cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: color-mix(in srgb, var(--ink) 8%, var(--surface));
+}
+
+dialog.project-modal .showcase__cover.is-missing {
+  visibility: hidden;
+}
+
+dialog.project-modal .showcase__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+}
+
+dialog.project-modal .showcase__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Заголовок — это кнопка, растянутая на всю карточку: кликабельна вся карточка */
+dialog.project-modal .showcase__open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+dialog.project-modal .showcase__open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+dialog.project-modal .showcase__open:focus-visible {
+  outline: none;
+}
+
+dialog.project-modal .showcase__meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+dialog.project-modal .showcase__summary {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+dialog.project-modal .showcase__body .tags {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+/* Галерея */
+dialog.project-modal .project-modal__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+dialog.project-modal .project-modal__figure {
+  margin: 0;
+}
+
+dialog.project-modal .project-modal__figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  background: color-mix(in srgb, var(--ink) 8%, var(--surface));
+}
+
+dialog.project-modal .project-modal__figure img.is-missing {
+  visibility: hidden;
+}
+
+dialog.project-modal .project-modal__figure figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  dialog.project-modal .project-modal__showcase,
+  dialog.project-modal .project-modal__gallery {
+    padding: 22px 20px;
+  }
+
+  dialog.project-modal .showcase,
+  dialog.project-modal .project-modal__gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ===== НУМЕРАЦИЯ РАЗДЕЛОВ: единый «бейдж» для цифр и значка ↗ ===== */
+
+dialog.project-modal .project-modal__section {
+  grid-template-columns: 26px minmax(0, 1fr);
+  column-gap: 14px;
+}
+
+dialog.project-modal .project-modal__section-index,
+dialog.project-modal .project-modal__materials-index {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+
+  color: var(--muted);
+  font: 600 10.5px/1 var(--font-body);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
+dialog.project-modal .project-modal__materials-index {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+/* высота строки заголовка равна высоте бейджа — они стоят на одной оси */
+dialog.project-modal .project-modal__section-title {
+  line-height: 26px;
+}
+
+/* «Мой вклад» и «Результат» выделены залитым бейджем */
+dialog.project-modal .project-modal__section--role .project-modal__section-index,
+dialog.project-modal .project-modal__section--result .project-modal__section-index {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}

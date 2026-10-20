@@ -30,10 +30,9 @@
         <ul>
           <li><a href="#about" aria-current="true">Обо мне</a></li>
           <li><a href="#projects">Проекты</a></li>
-          <li><a href="#skills">Навыки</a></li>
-          <li><a href="#education">Образование</a></li>
-          <li><a href="#experience">Опыт</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#experience">Опыт по специальности</a></li>
+          <li><a href="#other-experience">Другой опыт</a></li>
+          <li><a href="#training">Повышение квалификации</a></li>
         </ul>
       </nav>
  
@@ -57,14 +56,13 @@
           <p class="hero__desc">
             Проектирую развитие городских территорий и пространств (концепции редевелопмента, благоустройство),
             оцифровываю бизнес-процессы и запускаю цифровые продукты.
-            <p class="hero__desc"> В цифрах и проектах: Разрабатывал концепции развития территорий,
-            проектировал IT-решения (карты сайтов, цифровая инфраструктура присутствия) и собирал кастомных ИИ-ассистентов под задачи.
-            </p>
-            <p class="hero__desc">Инструменты и подход: Умею работать с данными, быстро погружаться в новые предметные области,
-                превращать хаос из требований в четкие архитектурные и управленческие решения.
-            </p>
           </p>
- 
+          <p class="hero__desc">
+            <strong>Научные и профессиональные интересы:</strong> развитие городов и территорий (умный город),
+            государственное и муниципальное управление, госзакупки, аналитика данных,
+            машинное обучение и цифровые решения для управления.
+          </p>
+
           <ul class="hero__contacts">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
@@ -90,6 +88,16 @@
 </svg>
                 Telegram
               </a>
+            </li>
+            <li>
+              <!-- ЗАПОЛНИТЬ: замените на <a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a> -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +7 (909) 797-02-81
+            </li>
+            <li>
+              <!-- ЗАПОЛНИТЬ: сумма -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>
+              Зарплатные ожидания: от 60 000 ₽
             </li>
           </ul>
          <div class="hero__actions" display: none>
@@ -127,6 +135,57 @@
       </div>
     </section>
 
+    <!-- ===== Обо мне ===== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="about-title">Обо мне</h2>
+        </div>
+        <div class="about__groups">
+          <div>
+            <h3 class="about__group-title">В цифрах и проектах</h3>
+            <ul class="about__tiles">
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16"/><path d="M16 6v16"/></svg></span>
+              <h4 class="fact__title">Концепции территорий</h4>
+              <p class="fact__text">Развитие территорий и городской среды</p>
+            </li>
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+              <h4 class="fact__title">IT-решения</h4>
+              <p class="fact__text">Карты сайтов, цифровая инфраструктура присутствия</p>
+            </li>
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></span>
+              <h4 class="fact__title">ИИ-ассистенты</h4>
+              <p class="fact__text">Кастомные ассистенты под задачи</p>
+            </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="about__group-title">Инструменты и подход</h3>
+            <ul class="about__tiles">
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></span>
+              <h4 class="fact__title">Работа с данными</h4>
+              <p class="fact__text">Структурирую и анализирую информацию</p>
+            </li>
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+              <h4 class="fact__title">Быстрое погружение</h4>
+              <p class="fact__text">В новые предметные области</p>
+            </li>
+            <li class="about__tile">
+              <span class="fact__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span>
+              <h4 class="fact__title">От хаоса к решению</h4>
+              <p class="fact__text">Из требований — чёткие архитектурные и управленческие решения</p>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Проекты ===== -->
        <!-- ===== Проекты ===== -->
     <section class="section projects" id="projects" aria-labelledby="projects-title">
@@ -139,7 +198,38 @@
     </section>
 
 
+    <!-- ===== Опыт по специальности ===== -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="experience-title">Опыт по специальности</h2>
+        </div>
+        <ul class="entries" id="experience-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- ===== Другой опыт работы ===== -->
+    <section class="section" id="other-experience" aria-labelledby="other-experience-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="other-experience-title">Другой опыт работы</h2>
+        </div>
+        <ul class="entries" id="other-experience-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- ===== Повышение квалификации ===== -->
+    <section class="section" id="training" aria-labelledby="training-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="training-title">Повышение квалификации</h2>
+        </div>
+        <ul class="entries" id="training-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
     <script type="module" src="assets/js/render-projects.js"></script>
+    <script type="module" src="assets/js/render-profile.js"></script>
   </main>
  
 </body>
