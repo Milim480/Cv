@@ -270,9 +270,22 @@ function showcaseCard(item, parent) {
   return li;
 }
 
+function pluralProjects(n) {
+  const rem10 = n % 10;
+  const rem100 = n % 100;
+  if (rem10 === 1 && rem100 !== 11) return `${n} проект`;
+  if (rem10 >= 2 && rem10 <= 4 && (rem100 < 10 || rem100 >= 20)) return `${n} проекта`;
+  return `${n} проектов`;
+}
+
 function buildShowcase(c, id) {
   const block = el("section", "project-modal__showcase");
-  block.append(el("h3", "project-modal__showcase-title", c.showcase.title || "Проекты"));
+  const heading = el("h3", "project-modal__showcase-title");
+  const headingText = el("span", null, c.showcase.title || "Проекты");
+  const countBadge = el("span", "showcase__count-badge");
+  countBadge.hidden = true;
+  heading.append(headingText, countBadge);
+  block.append(heading);
 
   if (hasText(c.showcase.intro)) {
     block.append(el("p", "project-modal__showcase-intro", c.showcase.intro));
@@ -291,6 +304,8 @@ function buildShowcase(c, id) {
         return;
       }
       status.remove();
+      countBadge.textContent = pluralProjects(items.length);
+      countBadge.hidden = false;
       grid.replaceChildren(...items.map((item) => showcaseCard(item, c)));
     })
     .catch((error) => {

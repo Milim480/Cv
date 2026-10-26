@@ -54,6 +54,40 @@ function card(project) {
         event.preventDefault();
         openCase(projectToCase(project));
       });
+
+      // Если карточка ведёт на витрину подпроектов, подгружаем счётчик и готовим печатный блок
+      if (project.details?.showcase?.source) {
+        fetch(project.details.showcase.source)
+          .then((res) => (res.ok ? res.json() : []))
+          .then((items) => {
+            if (Array.isArray(items) && items.length) {
+              const label = project.link.label || "Витрина проектов";
+              link.textContent = `${label} (${items.length}) →`;
+
+              // Печатный блок со списком подпроектов (виден только при сохранении в PDF)
+              const printBox = el("div", "project__print-showcase");
+              const printTitle = el("h4", "project__print-subtitle", `В составе направления (${items.length}):`);
+              const printList = el("ul", "project__print-list");
+
+              items.forEach((item) => {
+                const itemLi = el("li");
+                const titleStrong = el("strong", null, item.title);
+                if (item.location) {
+                  titleStrong.append(` (${item.location})`);
+                }
+                itemLi.append(titleStrong);
+                if (item.summary) {
+                  itemLi.append(el("span", null, ` — ${item.summary}`));
+                }
+                printList.append(itemLi);
+              });
+
+              printBox.append(printTitle, printList);
+              body.append(printBox);
+            }
+          })
+          .catch(() => {});
+      }
     } else if (/^https?:\/\//i.test(link.href)) {
       link.target = "_blank";
       link.rel = "noopener noreferrer";

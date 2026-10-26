@@ -673,12 +673,32 @@ dialog.project-modal .project-modal__facts + .project-modal__gallery {
 }
 
 dialog.project-modal .project-modal__showcase-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 8px;
   color: var(--ink);
   font-size: 19px;
   font-weight: 650;
   line-height: 1.4;
   letter-spacing: -0.025em;
+}
+
+dialog.project-modal .showcase__count-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+  color: var(--muted);
+}
+
+/* Печатный список подпроектов скрыт при обычном просмотре сайта */
+.project__print-showcase {
+  display: none;
 }
 
 dialog.project-modal .project-modal__showcase-intro {
