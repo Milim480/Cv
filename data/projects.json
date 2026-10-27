@@ -17,7 +17,7 @@
     "task": "Собрать данные о товарах, ценах и скидках.",
     "done": "Реализовал парсер на Selenium, обработку и сохранение данных.",
     "result": "Стабильный сбор данных, готовый к расширению.",
-    "link": { "href": "https://github.com/alexey-elmanov", "label": "GitHub" }
+    "link": { "href": "https://github.com/Milim480/ozon-parser", "label": "GitHub" }
   },
   {
   "title": "PRO.HUB - концепция научно-управленческих хакатонов",
