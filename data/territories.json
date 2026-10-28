@@ -264,13 +264,13 @@
     {
       "label": "Пролет 2 и 3 этажей (видео), временно недоступно",
       "url": "https://disk.yandex.ru/i/x6Bs3z1NWjk79A"
-    },
-    {
-      "label": "Диплом победителя Next Profi Hackathon (04–06.12.2024)",
-      "url": "files/atec-redesign/diploma.pdf"
     }
 ],
     "thanks": [
+      {
+        "label": "Диплом победителя Next Profi Hackathon (04–06.12.2024)",
+        "url": "files/atec-redesign/diploma.pdf"
+      },
       {
         "label": "Благодарность ООО «ЭН+ Тепло Волга»",
         "url": "files/atec-redesign/en-plus-thanks.pdf"
