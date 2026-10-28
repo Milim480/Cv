@@ -100,7 +100,12 @@
         "url": "files/prohub/prohub-analysis.pdf"
       }
     ],
-    "certificatesDir": "files/prohub/certificates/"
+    "thanks": [
+  {
+    "label": "Благодарность за разработку концепции",
+    "url": "files/prohub/certificates/prohub-thank-you.pdf"
+  }
+]
   }
 },
   {
