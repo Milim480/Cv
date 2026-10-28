@@ -29,25 +29,26 @@
     "result": "Аналитический документ и концепция города семьи, жизни и будущего на основе образа гадкого утенка.",
     "gallery": [],
     "materials": [
-      {
-        "label": "Аналитический документ",
-        "url": "files/bagrationovsk/Аналитический документ.pdf"
-      },
-      {
-        "label": "Благодарственное письмо администрации",
-        "url": "files/bagrationovsk/administration.pdf"
-      },
-      {
-        "label": "Благодарность GREEN за участие в управленческом хакатоне (29.11.2023)",
-        "url": "files/bagrationovsk/green-hackathon.pdf"
-      },
-      {
-        "label": "Благодарственное письмо GREEN за концепцию развития и туристический бренд города (09.04.2024)",
-        "url": "files/bagrationovsk/green-letter.pdf"
-      }
+    {
+      "label": "Аналитический документ",
+      "url": "files/bagrationovsk/Аналитический документ.pdf"
+    }
     ],
-    "thanks": []
-  },
+    "thanks": [
+        {
+          "label": "Благодарственное письмо администрации",
+          "url": "files/bagrationovsk/administration.pdf"
+        },
+        {
+          "label": "Благодарность GREEN за участие в управленческом хакатоне (29.11.2023)",
+          "url": "files/bagrationovsk/green-hackathon.pdf"
+        },
+        {
+          "label": "Благодарственное письмо GREEN за концепцию развития и туристический бренд города (09.04.2024)",
+          "url": "files/bagrationovsk/green-letter.pdf"
+        }
+        ]},
+
   {
     "id": "krasnoznamensk",
     "title": "Бренд Краснознаменского района: Сойка-жар-птица",
@@ -96,21 +97,22 @@
       "assets/img/projects/territory/krasnoznamensk/mockup-2.png"
     ],
     "materials": [
-      {
-        "label": "Презентация концепции",
-        "url": "files/krasnoznamensk/presentation.pdf"
-      },
-      {
-        "label": "Благодарность от Ассоциации туризма",
-        "url": "files/krasnoznamensk/Ассоциация Туризма.pdf"
-      },
-      {
-        "label": "Публикация в «Русском Западе»",
-        "url": "https://ruwest.ru/news/144167/"
+    {
+    "label": "Презентация концепции",
+    "url": "files/krasnoznamensk/presentation.pdf"
+    },
+    {
+    "label": "Публикация в «Русском Западе»",
+    "url": "https://ruwest.ru/news/144167/"
       }
     ],
-    "thanks": []
-  },
+    "thanks": [
+      {
+      "label": "Благодарность от Ассоциации туризма",
+    "url": "files/krasnoznamensk/Ассоциация Туризма.pdf"
+      }
+      ]
+    },
   {
     "id": "kaliningrad-port",
     "title": "Альтернативные источники дохода Калининградского морского рыбного порта",
@@ -170,17 +172,17 @@
     "galleryTitle": "Визуализации концепций",
     "gallery": [],
     "materials": [
-      {
+        {
         "label": "Презентация концепции",
         "url": "files/kaliningrad-port/KMRP-presentation.pdf"
-      },
-      {
-        "label": "Благодарность от Ассоциации туризма",
+        }
+        ],
+    "thanks": [
+        {
+        "label": "Благодарность от ФЕСКО",
         "url": "files/kaliningrad-port/FescoThanks.pdf"
-      }
-    ],
-    "thanks": []
-  },
+        }
+    ]},
   {
     "id": "atec-redesign",
     "title": "Редизайн-проект АТЭЦ: интерьер и территория Автозаводской ТЭЦ-2",
@@ -247,33 +249,33 @@
       "assets/img/projects/territory/atec-redesign/banners.jpg"
     ],
     "materials": [
-      {
-        "label": "Аналитический документ",
-        "url": "files/atec-redesign/analytical-document.pdf"
-      },
-      {
-        "label": "Презентация проекта",
-        "url": "files/atec-redesign/presentation.pdf"
-      },
-      {
-        "label": "Пролет холла (видео)",
-        "url": "files/atec-redesign/hall-flythrough.mp4"
-      },
-      {
-        "label": "Пролет 2 и 3 этажей (видео), временно недоступно",
-        "url": "https://disk.yandex.ru/i/x6Bs3z1NWjk79A"
-      },
-      {
-        "label": "Диплом победителя Next Profi Hackathon (04–06.12.2024)",
-        "url": "files/atec-redesign/diploma.pdf"
-      },
+    {
+      "label": "Аналитический документ",
+      "url": "files/atec-redesign/analytical-document.pdf"
+    },
+    {
+      "label": "Презентация проекта",
+      "url": "files/atec-redesign/presentation.pdf"
+    },
+    {
+      "label": "Пролет холла (видео)",
+      "url": "files/atec-redesign/hall-flythrough.mp4"
+    },
+    {
+      "label": "Пролет 2 и 3 этажей (видео), временно недоступно",
+      "url": "https://disk.yandex.ru/i/x6Bs3z1NWjk79A"
+    },
+    {
+      "label": "Диплом победителя Next Profi Hackathon (04–06.12.2024)",
+      "url": "files/atec-redesign/diploma.pdf"
+    }
+],
+    "thanks": [
       {
         "label": "Благодарность ООО «ЭН+ Тепло Волга»",
         "url": "files/atec-redesign/en-plus-thanks.pdf"
       }
-    ],
-    "thanks": []
-  },
+    ]},
   {
     "id": "svetlogorsk-hackathon",
     "title": "Хакатон.Светлогорск: благоустройство побережья реки Светлогорка",
@@ -310,11 +312,12 @@
     "galleryTitle": "",
     "gallery": [],
     "materials": [
-      {
+    ],
+    "thanks": [
+       {
         "label": "Сертификат участника «Хакатон.Светлогорск»",
         "url": "files/svetlogorsk/certificate.pdf"
       }
-    ],
-    "thanks": []
+    ]
   }
 ]
